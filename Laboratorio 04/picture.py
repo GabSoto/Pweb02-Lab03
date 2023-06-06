@@ -50,9 +50,12 @@ class Picture:
     return Picture(under)
   
   def horizontalRepeat(self, n):
-    """ Devuelve una nueva figura repitiendo la figura actual al costado
-        la cantidad de veces que indique el valor de n """
-    return Picture(None)
+    repeated_img = self.img  # Crear una copia de la imagen original
+    
+    for i in range(n):
+        repeated_img = self.join(Picture(repeated_img)).img  # Unir la imagen repetida con la imagen actual
+    
+    return Picture(repeated_img)
 
   def verticalRepeat(self, n):
 
