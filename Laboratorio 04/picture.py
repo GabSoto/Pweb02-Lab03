@@ -1,7 +1,7 @@
 from colors import *
 class Picture:
   def __init__(self, img):
-    self.img = img;
+    self.img = img
 
   def __eq__(self, other):
     return self.img == other.img
@@ -12,7 +12,6 @@ class Picture:
     return inverter[color]
 
   def verticalMirror(self):
-    """ Devuelve el espejo vertical de la imagen """
     vertical = []
     for value in self.img:
         vertical.append(value[::-1])
@@ -24,7 +23,6 @@ class Picture:
 
   def negative(self):
     negative = []
-
     for row in self.img:
       inverted_row = [self._invColor(color) for color in row]
       negative.append(inverted_row)
