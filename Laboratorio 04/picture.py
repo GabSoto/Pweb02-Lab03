@@ -51,10 +51,18 @@ class Picture:
 
   def under(self, p):
 
-    under = p.img
+    under = []
 
     for i in range(len(self.img)):
-      under.append(self.img[i])
+      str = ""
+      for j in range(len(self.img[i])):
+        if(self.img[i][j] == " "):
+          str+=p.img[i][j]
+        else:
+          str+=self.img[i][j]
+      
+      under.append(str)
+
     return Picture(under)
   
   def horizontalRepeat(self, n):
