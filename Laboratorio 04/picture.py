@@ -38,8 +38,11 @@ class Picture:
     return Picture(new_img)
 
   def up(self, p):
-    # falta
-    return Picture(None)
+    up = p.img
+
+    for i in range(len(self.img)):
+      up.append(self.img[i])
+    return Picture(up)
 
   def under(self, p):
 
@@ -58,8 +61,12 @@ class Picture:
     return Picture(repeated_img)
 
   def verticalRepeat(self, n):
-
-    return Picture(None)
+    repeated_img = self.img  # Crear una copia de la imagen original
+    
+    for i in range(n):
+        repeated_img = self.up(Picture(repeated_img)).img  # Unir la imagen repetida con la imagen actual
+    
+    return Picture(repeated_img)
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
