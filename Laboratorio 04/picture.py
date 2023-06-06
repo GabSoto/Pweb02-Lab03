@@ -35,19 +35,20 @@ class Picture:
     new_img = []
     
     for i in range(len(self.img)):
-        new_img.append(self.img[i] + p.img[i])
+        new_img.append(list(self.img[i]) + list(p.img[i]))
     
     return Picture(new_img)
 
   def up(self, p):
+    # falta
     return Picture(None)
 
   def under(self, p):
- 
-    under = self.img
 
-    for i in range(len(p.img)):
-      under.append(p.img[i])
+    under = p.img
+
+    for i in range(len(self.img)):
+      under.append(self.img[i])
     return Picture(under)
   
   def horizontalRepeat(self, n):
@@ -56,6 +57,7 @@ class Picture:
     return Picture(None)
 
   def verticalRepeat(self, n):
+
     return Picture(None)
 
   #Extra: Sólo para realmente viciosos 
