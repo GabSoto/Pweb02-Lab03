@@ -3,7 +3,7 @@ from chessPictures import *
 
 blackRock = rock.negative()
 blacknight = knight.negative()
-blackBishop = bishop.negative()
+blackBishop = bishop.negative() 
 blackQueen = queen.negative()
 blacKing = king.negative()
 blackPawn = pawn.negative()
